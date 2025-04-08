@@ -35,27 +35,40 @@ button.addEventListener('click', () => {
         foundCalls.forEach((call, index) => {
             const div = document.createElement('div');
             div.id = `hydra-output-${index}`;
-            div.style.width = '400px';
-            div.style.height = '330px'; // Adjust height to fit canvas and code label
+            div.style.width = '20vw'; // 20% of the viewport width
+            div.style.height = 'auto'; // Adjust height automatically based on content
             div.style.border = '1px solid black';
             div.style.margin = '10px';
             div.style.display = 'flex';
             div.style.flexDirection = 'column';
             div.style.alignItems = 'center';
-            div.style.justifyContent = 'center';
-            output.appendChild(div);
+            div.style.justifyContent = 'flex-start'; // Align content to the top
+            div.style.boxSizing = 'border-box'; // Ensure padding and border are included in width/height
+            div.style.padding = '10px'; // Add padding for better spacing
 
+            // Ensure at most 3 divs per row
+            output.style.display = 'flex';
+            output.style.flexWrap = 'wrap';
+            output.style.justifyContent = 'space-around';
+
+            output.appendChild(div);
             const codeLabel = document.createElement('p');
             codeLabel.textContent = `Code: ${call}.out()`;
             codeLabel.style.fontFamily = 'monospace';
             codeLabel.style.margin = '5px 0';
+            codeLabel.style.textAlign = 'center'; // Center-align the text
+            codeLabel.style.wordWrap = 'break-word'; // Ensure text wraps within the div
+            codeLabel.style.overflowWrap = 'break-word'; // Add compatibility for older browsers
+            codeLabel.style.whiteSpace = 'normal'; // Allow text to wrap to the next line
+            codeLabel.style.maxWidth = '100%'; // Ensure the text stays within the div
             div.appendChild(codeLabel);
 
             try {
                 const canvas = document.createElement('canvas');
-                canvas.width = 400;
-                canvas.height = 300;
+                canvas.width = div.clientWidth - 20; // Adjust canvas width to fit within the div
+                canvas.height = (canvas.width * 3) / 4; // Maintain a 4:3 aspect ratio
                 canvas.style.display = 'block'; // Ensure canvas stays within the div
+                canvas.style.marginTop = '10px'; // Add spacing between the label and canvas
                 div.appendChild(canvas);
 
                 const hydra = new Hydra({
