@@ -2,7 +2,7 @@
   "name": "hydra_sequencer",
   "version": "1.0.0",
   "main": "index.html",
-  "homepage": "https://filippo-fornai.github.io/hydra-vs-sequencer",
+  "homepage": "https://filippo-fornai.github.io/hydra-vs-sequencer/",
   "scripts": {
     "predeploy": "npm run build",
     "build": "vite build",
