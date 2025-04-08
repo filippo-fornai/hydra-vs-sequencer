@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 
 export default defineConfig({
     //define: { global: {} },
-    base: '/Hydra_VS_Sequencer',
+    base: '/hydra-vs-sequencer',
     define: {
         'process.env': {},
         // 'global.window': 'window'
