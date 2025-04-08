@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Hydra AST Parser</title>
+  <title>Hydra Sequencer</title>
   <style>
     body { font-family: sans-serif; padding: 2rem; }
     textarea { width: 100%; height: 150px; font-family: monospace; }
@@ -11,13 +11,16 @@
   </style>
   <!-- <script src="https://cdn.jsdelivr.net/npm/hydra-synth/dist/hydra-synth.js"></script> -->
 
-  <script type="module" crossorigin src="/hydra-vs-sequencer/assets/index-DG21y6UU.js"></script>
+  <script type="module" crossorigin src="/hydra-vs-sequencer/assets/index-B-WpiwHO.js"></script>
 </head>
 <body>
   <h1>Hydra AST Parser</h1>
 
-  <textarea id="codeInput">// Write your Hydra code here
-osc(10).out()</textarea>
+  <textarea id="codeInput">
+    // Write your Hydra code here
+    osc(10).rotate().modulate(osc()).pixelate().rotate().out()
+  </textarea>
+
   <br />
   <button id="parseButton">Parse Code</button>
 
