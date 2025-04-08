@@ -65,10 +65,12 @@ button.addEventListener('click', () => {
 
             try {
                 const canvas = document.createElement('canvas');
-                canvas.width = div.clientWidth - 20; // Adjust canvas width to fit within the div
-                canvas.height = (canvas.width * 3) / 4; // Maintain a 4:3 aspect ratio
+                canvas.style.width = '100%'; // Make the canvas take the full width of the div
+                canvas.style.height = '100%'; // Make the canvas take the full height of the div
                 canvas.style.display = 'block'; // Ensure canvas stays within the div
                 canvas.style.marginTop = '10px'; // Add spacing between the label and canvas
+                canvas.style.boxSizing = 'border-box'; // Include padding and border in the element's dimensions
+                canvas.style.flexGrow = '1'; // Allow the canvas to take up remaining height in the div
                 div.appendChild(canvas);
 
                 const hydra = new Hydra({
