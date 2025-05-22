@@ -1,8 +1,7 @@
 # ⚠️ Broken Hydra Multi-Instance Experiment
 
 This repository contains an experimental project that attempts to run **multiple instances of Hydra**, the live coding video synth.  
-It was meant as a prototype to explore concurrent the process of visual creation in
-video synthesis.
+It was meant as a prototype to explore the process of visual creation in hydra.
 
 ---
 
